@@ -1,0 +1,129 @@
+// Fonts
+@import url('https://fonts.bunny.net/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import 'bootstrap/scss/bootstrap';
+
+/* para que el html y body ocupen toda la altura de la pantalla */
+html, body {
+  height: 100%; /* Ocupa toda la altura de la ventana */
+  margin: 0;
+  overflow-x: hidden; /* Evitem el desbordamiento horizontl */
+
+}
+
+/* Aseguramos que el body use Flexbox y su dirección sea columna */
+body {
+  display: flex;
+  flex-direction: column; /* Los elementos se organizan de arriba a abajo */
+}
+
+/* El contenido principal se debe expandir para ocupar el espacio disponible */
+.content {
+  flex: 1; /* contenido crece para llenar el espacio disponible */
+  padding: 20px; /* Espaciado alrededor del contenido */
+  overflow: visible; /* Cambiado a visible para evitar que otros contenedores interfieran */
+}
+
+footer {
+  margin-top: auto; /* Asegura que el footer salga al final */
+  padding: 10px 0; /* Agrega un poco de espacio arriba y abajo del footer */
+}
+
+// Para que el navbar siempre esté visible aunque hagamos scroll
+.navbar-custom {
+  background-color: #343a40;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+// Estilo para los enlaces del navbar
+.navbar-nav .nav-link {
+  color: white; /* Establece el color del texto de los enlaces */
+  transition: all 0.3s ease; /* Añade una transición suave */
+}
+
+.navbar-nav .nav-link:hover {
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Efecto de sombra en el texto */
+  transform: scale(1.1); /*se hace mas grande al pasar el ratoli */
+}
+
+
+
+
+// para los formularios
+input[type="email"],
+input[type="password"] {
+  color: white;  // Establece el color del texto a blanco
+  background-color: #333;  // Fondo oscuro para los campos
+
+  // Cuando el input está enfocado
+  &:focus {
+    color: white;  // El texto sigue siendo blanco cuando está enfocado
+    background-color: #333;  // El fondo sigue siendo oscuro
+  }
+}
+
+// Contenedor principal del formulario
+.form-container {
+    width: 50%; // Ajusta el tamaño del formulario
+    max-width: 600px; // Evita que sea demasiado grande en pantallas grandes
+    background-color: #dab6c4; // Color de fondo similar al de la imagen
+
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+// formulario centrado
+.page-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; // Ocupa toda la altura de la pantalla
+}
+
+// para alinear
+.content-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+//valoracion con estrellas
+
+.rating {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: start;
+}
+
+.rating input {
+  display: none;
+}
+
+.rating label {
+  font-size: 25px;
+  color: gray;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+/* Cambia de color al pasar el raton */
+.rating label:hover,
+.rating label:hover ~ label {
+  color: yellow;
+}
+
+/* Mantener estrellas seleccionadas */
+.rating input:checked ~ label {
+  color: yellow;
+}
+
+
+
